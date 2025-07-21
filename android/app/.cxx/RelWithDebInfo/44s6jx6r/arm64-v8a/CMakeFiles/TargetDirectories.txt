@@ -1,0 +1,2 @@
+C:/IzzaTechHub/char_ai_delta/android/app/.cxx/RelWithDebInfo/44s6jx6r/arm64-v8a/CMakeFiles/edit_cache.dir
+C:/IzzaTechHub/char_ai_delta/android/app/.cxx/RelWithDebInfo/44s6jx6r/arm64-v8a/CMakeFiles/rebuild_cache.dir

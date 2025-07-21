@@ -1,4 +1,5 @@
 import 'dart:ui';
+import 'package:api_key_pool/api_key_pool.dart';
 import 'package:character_ai_delta/app/provider/connection_provider.dart';
 import 'package:character_ai_delta/app/services/remoteconfig_services.dart';
 import 'package:character_ai_delta/firebase_options.dart';
@@ -29,6 +30,7 @@ Future<void> main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+  await ApiKeyPool.init('Character Ai Delta');
   RemoteConfigService().initialize();
 
   //? Push Notification Implementation
