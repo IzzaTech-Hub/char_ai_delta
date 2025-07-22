@@ -14,7 +14,7 @@ packages:
     description:
       path: "."
       ref: HEAD
-      resolved-ref: "2d964b6821bec7ff68fd98c7c291544262645cf9"
+      resolved-ref: "4a57ad6dfcdfacaaef31274213880110ab907aa3"
       url: "https://github.com/IzzaTech-Hub/Api-Keys-Config-Package.git"
     source: git
     version: "0.0.1"
