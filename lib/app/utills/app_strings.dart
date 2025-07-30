@@ -36,9 +36,9 @@ class AppStrings {
 
   // // // ! Orignal Ids ! // // //
 
-  static String ADMOB_BANNER = "ca-app-pub-2735751208101773/9184948150";
-  static String ADMOB_INTERSTITIAL = "ca-app-pub-2735751208101773/2579833743";
-  static String ADMOB_APP_OPEN = "ca-app-pub-2735751208101773/5065524146";
-  static String ADMOB_NATIVE = "ca-app-pub-2735751208101773/3988461791";
-  static String ADMOB_REWARDED = "ca-app-pub-2735751208101773/6670465454";
+  static String ADMOB_BANNER = "ca-app-pub-2454590580016622/4030255013";
+  static String ADMOB_INTERSTITIAL = "ca-app-pub-2454590580016622/1404091674";
+  // static String ADMOB_APP_OPEN = "ca-app-pub-2735751208101773/5065524146";
+  // static String ADMOB_NATIVE = "ca-app-pub-2735751208101773/3988461791";
+  // static String ADMOB_REWARDED = "ca-app-pub-2735751208101773/6670465454";
 }

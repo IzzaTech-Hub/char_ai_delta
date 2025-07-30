@@ -14,28 +14,28 @@ class AppOpenAdManager {
     return appOpenAd != null;
   }
 
-  void loadAppOpenAd() {
-    AppOpenAd.load(
-      adUnitId: AppStrings.ADMOB_APP_OPEN,
-      request: AdRequest(),
-      adLoadCallback: AppOpenAdLoadCallback(
-        onAdLoaded: (ad) {
-          appOpenAd = ad;
-          print('AppOpenAd Loaded');
-        },
-        onAdFailedToLoad: (error) {
-          print('AppOpenAd failed to load: $error');
-          // Handle the error.
-        },
-      ),
-    );
-  }
+  // void loadAppOpenAd() {
+  //   AppOpenAd.load(
+  //     adUnitId: AppStrings.ADMOB_APP_OPEN,
+  //     request: AdRequest(),
+  //     adLoadCallback: AppOpenAdLoadCallback(
+  //       onAdLoaded: (ad) {
+  //         appOpenAd = ad;
+  //         print('AppOpenAd Loaded');
+  //       },
+  //       onAdFailedToLoad: (error) {
+  //         print('AppOpenAd failed to load: $error');
+  //         // Handle the error.
+  //       },
+  //     ),
+  //   );
+  // }
 
   void showAdIfAvailable() {
     print("ShowAdIFAvailable Called");
     if (!isAdAvailable) {
       print('Tried to show ad before available.');
-      loadAppOpenAd();
+      // loadAppOpenAd();
       return;
     }
     if (_isShowingAd) {
@@ -59,7 +59,7 @@ class AppOpenAdManager {
         _isShowingAd = false;
         ad.dispose();
         appOpenAd = null;
-        loadAppOpenAd();
+        // loadAppOpenAd();
       },
     );
     appOpenAd!.show();

@@ -42,9 +42,9 @@ class AdMobAdsProvider {
       _lastInterstitialShownTime =
           DateTime.now().subtract(Duration(seconds: 50));
       _createInterstitialAd();
-      createRewardedAd();
+      // createRewardedAd();
       // initBanner();
-      appOpenLoad();
+      // appOpenLoad();
     } catch (e, s) {
       print('Error in initialize(): $e\n$s');
     }
@@ -117,23 +117,23 @@ class AdMobAdsProvider {
   }
 
 //? ----------------------------------AppOPEN--------------------------------
-  late AppLifecycleReactor _appLifecycleReactor;
-  late AppOpenAdManager appOpenAdManager;
-  void appOpenLoad() {
-    if (AppOpenAdManager().appOpenAd == null) {
-    } else {
-      appOpenAdManager = AppOpenAdManager()..loadAppOpenAd();
-      _appLifecycleReactor =
-          AppLifecycleReactor(appOpenAdManager: appOpenAdManager);
+  // late AppLifecycleReactor _appLifecycleReactor;
+  // late AppOpenAdManager appOpenAdManager;
+  // void appOpenLoad() {
+  //   if (AppOpenAdManager().appOpenAd == null) {
+  //   } else {
+  //     appOpenAdManager = AppOpenAdManager()..loadAppOpenAd();
+  //     _appLifecycleReactor =
+  //         AppLifecycleReactor(appOpenAdManager: appOpenAdManager);
 
-      _appLifecycleReactor.listenToAppStateChanges();
-      print("AppOpen Load from HomeCTL");
-    }
-  }
+  //     _appLifecycleReactor.listenToAppStateChanges();
+  //     print("AppOpen Load from HomeCTL");
+  //   }
+  // }
 
-  void showAppOpen() {
-    appOpenAdManager.showAdIfAvailable();
-  }
+  // void showAppOpen() {
+  //   appOpenAdManager.showAdIfAvailable();
+  // }
 
 //?-----------------------------------End App Open--------------------------
 
@@ -293,34 +293,34 @@ class AdMobAdsProvider {
     });
   }
 
-  void createRewardedAd() {
-    try {
-      print("Reward Ad Load Called");
-      if (_rewardedAd == null) {
-        RewardedAd.load(
-          adUnitId: AppStrings.ADMOB_REWARDED,
-          request: AdRequest(),
-          rewardedAdLoadCallback: RewardedAdLoadCallback(
-            onAdLoaded: (RewardedAd ad) {
-              print('Rewarded ad loaded.');
-              _rewardedAd = ad;
-              _numRewardedLoadAttempts = 0;
-            },
-            onAdFailedToLoad: (LoadAdError error) {
-              print('Rewarded ad failed to load: $error');
-              _rewardedAd = null;
-              _numRewardedLoadAttempts++;
-              if (_numRewardedLoadAttempts < maxFailedLoadAttempts) {
-                createRewardedAd();
-              }
-            },
-          ),
-        );
-      }
-    } catch (e, s) {
-      print('Error in createRewardedAd(): $e\n$s');
-    }
-  }
+  // void createRewardedAd() {
+  //   try {
+  //     print("Reward Ad Load Called");
+  //     if (_rewardedAd == null) {
+  //       RewardedAd.load(
+  //         adUnitId: AppStrings.ADMOB_REWARDED,
+  //         request: AdRequest(),
+  //         rewardedAdLoadCallback: RewardedAdLoadCallback(
+  //           onAdLoaded: (RewardedAd ad) {
+  //             print('Rewarded ad loaded.');
+  //             _rewardedAd = ad;
+  //             _numRewardedLoadAttempts = 0;
+  //           },
+  //           onAdFailedToLoad: (LoadAdError error) {
+  //             print('Rewarded ad failed to load: $error');
+  //             _rewardedAd = null;
+  //             _numRewardedLoadAttempts++;
+  //             if (_numRewardedLoadAttempts < maxFailedLoadAttempts) {
+  //               createRewardedAd();
+  //             }
+  //           },
+  //         ),
+  //       );
+  //     }
+  //   } catch (e, s) {
+  //     print('Error in createRewardedAd(): $e\n$s');
+  //   }
+  // }
 
   bool isRewardedAdLoaded() {
     if (_rewardedAd == null) {
